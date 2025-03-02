@@ -74,7 +74,7 @@ public class Block {
     private byte[] calculateHash(int num, int amount, Hash prevHash, long curNonce) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("sha-256");
         md.update(ByteBuffer.allocate(4).putInt(num).array());
-        md.update(ByteBuffer.allocate(4).putLong(curNonce).array());
+        md.update(ByteBuffer.allocate(8).putLong(curNonce).array());
         md.update(ByteBuffer.allocate(4).putInt(amount).array());
         if (prevHash != null) {
             md.update(prevHash.getData());
