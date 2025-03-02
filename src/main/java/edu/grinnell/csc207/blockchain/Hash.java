@@ -1,5 +1,7 @@
 package edu.grinnell.csc207.blockchain;
 
+import java.util.Arrays;
+
 /**
  * A wrapper class over a hash value (a byte array).
  */
@@ -29,7 +31,7 @@ public class Hash {
     public boolean equals(Object other) {
         if (other instanceof Hash) {
             Hash o = (Hash) other;
-            return hashData.equals(o.getData());
+            return Arrays.equals(hashData, o.getData());
         }
         return false;
     }
