@@ -58,8 +58,10 @@ public class Block {
         return blockHash;
     }
 
-    // public String toString() {
-    // }
+    public String toString() {
+        return "Block" + blockNum + " (Amount: " + blockData + ", Nonce: " + blockNonce + ", prevHash: " + prevBlockHash
+                + ", hash:" + blockHash + ")";
+    }
 
     private long calculateNonce(int num, int amount, Hash prevHash) throws NoSuchAlgorithmException {
         long curNonce = 0;
