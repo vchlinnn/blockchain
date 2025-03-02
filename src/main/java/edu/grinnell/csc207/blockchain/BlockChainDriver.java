@@ -16,6 +16,10 @@ public class BlockChainDriver {
      * @throws NumberFormatException
      */
     public static void main(String[] args) throws NoSuchAlgorithmException {
+        if (args.length != 1) {
+            System.out.println("Usage: java BlockChainDriver <initial_amount>");
+            return;
+        }
 
         BlockChain blockChain = new BlockChain(Integer.parseInt(args[0]));
         Scanner scanner = new Scanner(System.in);
