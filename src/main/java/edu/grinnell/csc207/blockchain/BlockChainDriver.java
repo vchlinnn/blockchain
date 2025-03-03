@@ -25,7 +25,7 @@ public class BlockChainDriver {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println(blockChain.toString());
+            System.out.print(blockChain.toString());
             System.out.print("Command? ");
             String command = scanner.nextLine().trim();
 
@@ -33,6 +33,7 @@ public class BlockChainDriver {
                 case "mine":
                     System.out.print("Amount transferred? ");
                     int amount = scanner.nextInt();
+                    scanner.nextLine();
                     Block block = blockChain.mine(amount);
                     System.out.println("amount = " + amount + ", nonce = " + block.getNonce());
                     break;
@@ -40,8 +41,10 @@ public class BlockChainDriver {
                 case "append":
                     System.out.print("Amount transferred? ");
                     int amountAppend = scanner.nextInt();
+                    scanner.nextLine();
                     System.out.print("Nonce? ");
                     long nonce = scanner.nextLong();
+                    scanner.nextLine();
                     Block blockAppend = new Block(blockChain.getSize(), amountAppend, blockChain.getHash(), nonce);
                     blockChain.append(blockAppend);
                     break;
