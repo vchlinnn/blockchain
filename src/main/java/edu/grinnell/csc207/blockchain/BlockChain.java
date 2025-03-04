@@ -72,7 +72,7 @@ public class BlockChain {
     }
 
     public boolean isValidBlockChain() {
-        Node cur = first.next;
+        Node cur = first;
         while (cur.next != null) {
             if (cur.next.block.getPrevHash().equals(cur.block.getHash()) == false) {
                 return false;

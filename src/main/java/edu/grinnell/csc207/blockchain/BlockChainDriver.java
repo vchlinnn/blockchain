@@ -35,7 +35,7 @@ public class BlockChainDriver {
                     int amount = scanner.nextInt();
                     scanner.nextLine();
                     Block block = blockChain.mine(amount);
-                    System.out.println("amount = " + amount + ", nonce = " + block.getNonce());
+                    System.out.println("amount = " + amount + ", nonce = " + block.getNonce() + "\n");
                     break;
 
                 case "append":
@@ -45,6 +45,7 @@ public class BlockChainDriver {
                     System.out.print("Nonce? ");
                     long nonce = scanner.nextLong();
                     scanner.nextLine();
+                    System.out.print("\n");
                     Block blockAppend = new Block(blockChain.getSize(), amountAppend, blockChain.getHash(), nonce);
                     blockChain.append(blockAppend);
                     break;
@@ -55,7 +56,9 @@ public class BlockChainDriver {
 
                 case "check":
                     if (blockChain.isValidBlockChain()) {
-                        System.out.println("Chain is valid!");
+                        System.out.println("Chain is valid!\n");
+                    } else {
+                        System.out.println("Chain is not valid!\n");
                     }
                     break;
 

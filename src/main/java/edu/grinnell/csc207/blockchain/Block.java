@@ -65,10 +65,13 @@ public class Block {
 
     private long calculateNonce(int num, int amount, Hash prevHash) throws NoSuchAlgorithmException {
         long curNonce = 0;
-        while (new Hash(calculateHash(num, amount, prevHash, curNonce)).isValid() == false) {
-            curNonce += 1;
+        while (true) {
+            Hash hash = new Hash(calculateHash(num, amount, prevHash, curNonce));
+            if (hash.isValid()) {
+                return curNonce;
+            }
+            curNonce++;
         }
-        return curNonce;
     }
 
     private byte[] calculateHash(int num, int amount, Hash prevHash, long curNonce) throws NoSuchAlgorithmException {
