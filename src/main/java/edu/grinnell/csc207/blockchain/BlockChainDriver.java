@@ -75,6 +75,7 @@ public class BlockChainDriver {
                     System.out.println("    report: reports the balances of Alice and Bob");
                     System.out.println("    help: prints this list of commands");
                     System.out.println("    quit: quits the program");
+                    System.out.println("    \n");
                     break;
 
                 case "quit":
