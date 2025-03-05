@@ -10,3 +10,4 @@ Author: Linh Vu
 - Article on Java switch: https://www.w3schools.com/java/java_switch.asp
 - Article on Java Scanner: https://www.w3schools.com/java/java_user_input.asp
 - Article on Java StringBuilder: https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/
+- Question in StackOverflow: https://stackoverflow.com/questions/8689526/integer-to-two-digits-hex-in-java
