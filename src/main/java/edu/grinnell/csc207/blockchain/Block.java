@@ -59,8 +59,8 @@ public class Block {
     }
 
     public String toString() {
-        return "Block" + blockNum + " (Amount: " + blockData + ", Nonce: " + blockNonce + ", prevHash: " + prevBlockHash
-                + ", hash:" + blockHash.toString() + ")";
+        return "Block " + blockNum + " (Amount: " + blockData + ", Nonce: " + blockNonce + ", prevHash: "
+                + prevBlockHash + ", hash:" + blockHash.toString() + ")";
     }
 
     private long calculateNonce(int num, int amount, Hash prevHash) throws NoSuchAlgorithmException {
