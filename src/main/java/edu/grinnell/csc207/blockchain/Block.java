@@ -91,7 +91,8 @@ public class Block {
      * @return A string representation of the block
      */
     public String toString() {
-        return "Block " + blockNum + " (Amount: " + blockData + ", Nonce: " + blockNonce + ", prevHash: "
+        return "Block " + blockNum + " (Amount: " + blockData 
+                + ", Nonce: " + blockNonce + ", prevHash: "
                 + prevBlockHash + ", hash:" + blockHash.toString() + ")";
     }
 
@@ -104,7 +105,8 @@ public class Block {
      * @return a valid nonce value
      * @throws NoSuchAlgorithmException
      */
-    private long calculateNonce(int num, int amount, Hash prevHash) throws NoSuchAlgorithmException {
+    private long calculateNonce(int num, int amount, Hash prevHash) 
+    throws NoSuchAlgorithmException {
         long curNonce = 0;
         while (true) {
             Hash hash = new Hash(calculateHash(num, amount, prevHash, curNonce));
@@ -124,7 +126,8 @@ public class Block {
      * @return the calculated hash 
      * @throws NoSuchAlgorithmException
      */
-    private byte[] calculateHash(int num, int amount, Hash prevHash, long curNonce) throws NoSuchAlgorithmException {
+    private byte[] calculateHash(int num, int amount, 
+        Hash prevHash, long curNonce) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("sha-256");
         md.update(ByteBuffer.allocate(4).putInt(num).array());
         md.update(ByteBuffer.allocate(8).putLong(curNonce).array());
