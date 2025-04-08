@@ -35,7 +35,8 @@ public class BlockChainDriver {
                     int amount = scanner.nextInt();
                     scanner.nextLine();
                     Block block = blockChain.mine(amount);
-                    System.out.println("amount = " + amount + ", nonce = " + block.getNonce() + "\n");
+                    System.out.println("amount = " + amount + ", nonce = " 
+                                        + block.getNonce() + "\n");
                     break;
 
                 case "append":
@@ -46,7 +47,8 @@ public class BlockChainDriver {
                     long nonce = scanner.nextLong();
                     scanner.nextLine();
                     System.out.print("\n");
-                    Block blockAppend = new Block(blockChain.getSize(), amountAppend, blockChain.getHash(), nonce);
+                    Block blockAppend = new Block(blockChain.getSize(), amountAppend, 
+                                                    blockChain.getHash(), nonce);
                     blockChain.append(blockAppend);
                     break;
 
@@ -68,14 +70,14 @@ public class BlockChainDriver {
 
                 case "help":
                     System.out.println("Valid commands:");
-                    System.out.println("    mine: discovers the nonce for a given transaction");
-                    System.out.println("    append: appends a new block onto the end of the chain");
-                    System.out.println("    remove: removes the last block from the end of the chain");
-                    System.out.println("    check: checks that the block chain is valid");
-                    System.out.println("    report: reports the balances of Alice and Bob");
-                    System.out.println("    help: prints this list of commands");
-                    System.out.println("    quit: quits the program");
-                    System.out.println("    \n");
+                    System.out.println("  mine: discovers the nonce for a given transaction");
+                    System.out.println("  append: appends a new block onto the end of the chain");
+                    System.out.println("  remove: removes the last block from the end of the chain");
+                    System.out.println("  check: checks that the block chain is valid");
+                    System.out.println("  report: reports the balances of Alice and Bob");
+                    System.out.println("  help: prints this list of commands");
+                    System.out.println("  quit: quits the program");
+                    System.out.println("  \n");
                     break;
 
                 case "quit":
