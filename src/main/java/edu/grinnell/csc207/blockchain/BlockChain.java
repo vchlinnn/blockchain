@@ -77,6 +77,7 @@ public class BlockChain {
             if (cur.next.block.getPrevHash().equals(cur.block.getHash()) == false) {
                 return false;
             }
+            cur = cur.next;
         }
         return true;
     }
@@ -84,7 +85,7 @@ public class BlockChain {
     public void printBalances() {
         int aliceBalance = balance;
         int bobBalance = first.block.getAmount() - aliceBalance;
-        System.out.println("Alice: " + aliceBalance + ", Bob: " + bobBalance);
+        System.out.println("Alice: " + aliceBalance + ", Bob: " + bobBalance + "\n");
     }
 
     public String toString() {
