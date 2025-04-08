@@ -105,8 +105,8 @@ public class Block {
      * @return a valid nonce value
      * @throws NoSuchAlgorithmException
      */
-    private long calculateNonce(int num, int amount, Hash prevHash) 
-    throws NoSuchAlgorithmException {
+    private long calculateNonce(int num, int amount, 
+        Hash prevHash) throws NoSuchAlgorithmException {
         long curNonce = 0;
         while (true) {
             Hash hash = new Hash(calculateHash(num, amount, prevHash, curNonce));
